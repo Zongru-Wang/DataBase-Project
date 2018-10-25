@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QwikTix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body  { padding-bottom: 100px; }
+        form  { display: table; margin-left: 40px; }
+        p     { display: table-row;  }
+        label { display: table-cell; }
+        input { display: table-cell; }
+        input[type=submit] {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to QwikTix</h1>
+        <h3>Try the following queries</h3>
+
+        <h4>a) Register a new user</h4>
+        <form action="/taska" method="get" target="_blank">
+
+            <p><label>First name: </label> <input type="text" name="FirstName" value="John"></p>
+            <p><label>Last name: </label> <input type="text" name="LastName" value="Appleseed"></p>
+            <p><label>Email: </label> <input type="text" name="Email" value="jappleseed@email.com"></p>
+            <p><label>Password: </label> <input type="text" name="Password" value="badpassword"></p>
+            <p><label>Picture: </label> <input type="text" name="Picture" value="http://lorempixel.com/output/people-q-c-400-400-3.jpg"></p>
+            <p><label>Street: </label> <input type="text" name="Street" value="Elm Street"></p>
+            <p><label>City: </label> <input type="text" name="City" value="Boston"></p>
+            <p><label>Postal Code: </label> <input type="text" name="PostalCode" value="02120"></p>
+            <p><label>Country: </label> <input type="text" name="Country" value="USA"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="Register">
+        </form>
+
+
+        <h4>b) Record that a user loves a movie</h4>
+
+        <form action="/taskb" method="get" target="_blank">
+            <p><label>User ID: </label> <input type="text" name="UserID" value="10"></p>
+            <p><label>Movie ID: </label> <input type="text" name="MovieID" value="2"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="Love">
+        </form>
+
+
+        <h4>c) Order a ticket from a local theatre</h4>
+
+        <form action="/taskc" method="get" target="_blank">
+
+            <p><label>Amount: </label> <input type="text" name="Amount" value="15"></p>
+            <p><label>User ID: </label> <input type="text" name="UserID" value="7"></p>
+            <p><label>Movie ID: </label> <input type="text" name="MovieID" value="1"></p>
+            <p><label>Theater Name: </label> <input type="text" name="TheaterName" value="The Spectrum"></p>
+            <p><label>Seat Count: </label> <input type="text" name="SeatCount" value="4"></p>
+            <p><label>Seats: </label> <input type="text" name="Seats" value="3G,6J,2A,1G"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="Order">
+        </form>
+
+
+        <h4>d) Credit an existing actress for a movie</h4>
+
+        <form action="/taskd" method="get" target="_blank">
+
+            <p><label>Movie ID: </label> <input type="text" name="MovieID" value="6"></p>
+            <p><label>Role: </label> <input type="text" name="Role" value="Actor"></p>
+            <p><label>Person ID: </label> <input type="text" name="PersonID" value="3"></p>
+            <p><label>Character Name: </label> <input type="text" name="CharacterName" value="Smith"></p>
+            <p><label>Character Photo: </label> <input type="text" name="CharacterPhoto" value="http://lorempixel.com/output/people-q-c-400-400-9.jpg"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="Credit">
+        </form>
+
+
+        <h4>e) Provide a ranked list of revenue generated from the top-10 studios</h4>
+
+        <form action="/taske" target="_blank">
+          <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="View list" />
+        </form>
+
+
+        <h4>f) Find all movies directed by a person (supplied via last name)</h4>
+
+        <form action="/taskf" method="get" target="_blank">
+            <p><label>Last name: </label> <input type="text" name="LastName" value="Maas"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="Find movies">
+        </form>
+
+
+        <h4>g) Load the cover images and names of movies ordered by a particular user</h4>
+
+        <form action="/taskg" method="get" target="_blank">
+            <p><label>User ID: </label> <input type="text" name="UserID" value="1"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="Find movies">
+        </form>
+
+
+        <h4>h) Find all movies released this year that a user loves but has not ordered</h4>
+
+        <form action="/taskh" method="get" target="_blank">
+            <p><label>User ID: </label> <input type="text" name="UserID" value="1"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="Find movies">
+        </form>
+
+
+        <h4>i) Find all people (name, picture, and role) credited for a particular movie (supplied by name)</h4>
+
+        <form action="/taski" method="get" target="_blank">
+            <p><label>Movie name: </label> <input type="text" name="Name" value="Anger Management"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="See people credited">
+        </form>
+
+
+        <h4>j) Provide a ranked list of revenue generated from the top-3 movie genres</h4>
+
+        <form action="/taskj" target="_blank">
+          <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="View list" />
+        </form>
+
+        <h3> Reports </h3>
+
+        <h4> 1) Create a list of names of people and number of movies which are loved by user which they are credited in </h4>
+
+        <form action="/report1" target="_blank">
+          <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="View list" />
+        </form>
+
+        <h4> 2) Find all theaters and streaming services and the number of orders </h4>
+
+        <form action="/report2" target="_blank">
+          <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="View list" />
+        </form>
+
+        <h4> 3) Find all people of a given role who have appeared in movies with different genres </h4>
+
+        <form action="/report3" method="get" target="_blank">
+            <p><label>Role: </label> <input type="text" name="Role" value="Actor"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="View list">
+        </form>
+
+        <h4> 4) Find all the movies (and their genres) that were ordered by a particular user, ordered first by the movie name, then by genre </h4>
+
+        <form action="/report4" method="get" target="_blank">
+            <p><label>User ID: </label> <input type="text" name="UserID" value="8"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="View list">
+        </form>
+
+        <h4> 5) Find the most loved movies in every ZIP code for a given country where at least two users live </h4>
+
+        <form action="/report5" method="get" target="_blank">
+            <p><label>Country: </label> <input type="text" name="Country" value="USA"></p>
+            <p><label>Table view</label><input type="checkbox" name="format" value="table" checked><br>
+            <input type="submit" value="View list">
+        </form>
+
+
+    </div>
+</body>
+</html>
